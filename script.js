@@ -1,21 +1,25 @@
 //add all divs
-let htmlElements = "";
 let container = document.getElementById("etch_container");
+let htmlElements = "";
 newEtchSize(16);
 function newEtchSize(size)
 {
     //add elements
+    reset();
     let subElements = document.getElementsByClassName("box");
     for(let x = subElements.length; x < Math.pow(size, 2); x++)
     {
         htmlElements += ('<div id="boxID" class="box"></div>');
     }
-    container.innerHTML = htmlElements;
-    //delete unwanted elements
+    container.innerHTML += htmlElements;
+    htmlElements = "";
+        //delete unwanted elements
     while(subElements.length > Math.pow(size, 2))
     {
         subElements[0].parentNode.removeChild(subElements[0]);
     }
+    console.log("html " + htmlElements.length);
+    console.log("element length " +subElements.length);
     //add hover function
     for(let x = 0; x < subElements.length; x++)
     {
@@ -26,25 +30,14 @@ function newEtchSize(size)
         subElements[x].style.setProperty('height', 500/size + 'px');
     }
 }
-//add new size to etch-a-sketch
-let slider = document.getElementById("myRange");
-let sliderValue = document.getElementById("sliderValue");
-sliderValue.innerHTML = slider.value;
 
-slider.oninput = function () 
-{
-    sliderValue.innerHTML = this.value;
-    newEtchSize(this.value);
-    document.getElementById("etch_container").style.gridTemplateColumns = `repeat(${this.value}, 1fr)`;
-}
 
-function changeSize()
+function changeSize(input)
 {
-    let input = document.getElementById("input").value;
+    document.getElementById("txtInput").value = input;
     document.getElementById("myRange").value = input;
-    sliderValue.innerHTML = input;
-    newEtchSize(input);
     document.getElementById("etch_container").style.gridTemplateColumns = `repeat(${input}, 1fr)`;
+    newEtchSize(input);
 }
 function reset()
 {    

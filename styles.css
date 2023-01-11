@@ -23,6 +23,7 @@ body {
 }
 .box {
     background-color: pink;
+    outline-style: solid;
 }
 
 
@@ -43,6 +44,14 @@ body {
 }
 
 
+
+.slidecontainer {
+    background-color: pink;
+    height: 350px;
+    width: 300px;
+    justify-content:flex-start;
+    align-items: space-between;
+}
 
 
 
