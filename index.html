@@ -16,9 +16,12 @@
     <header class="bg-dark"><h1>Etch-a-Sketch</h1></header>
     <div class="main">
         <div class ="mainLeft">
-            <div class="slidecontainer">                
+            <div class="slidecontainer">
+                <label >Grid size adjustor</label>                
                 <input type="range" onchange="changeSize(this.value)" min="1" max="100" value=16 class="slider" id="myRange">
+                <label>Grid radius adjustor</label>                
                 <input type="range" min="1" max="15" onchange="changeRadius(this.value)" value=10 class="slider" id="borderRadius">
+                <label class="bold">Grid color adjustments</label>                
                 <input type="range" min="0" max="255" onchange="changeColor(this.value, blue.value, green.value)" value=255 class="slider" id="red">
                 <input type="range" min="0" max="255" onchange="changeColor(red.value, blue.value, this.value)" value=203 class="slider" id="green">
                 <input type="range" min="0" max="255" onchange="changeColor(red.value, this.value, green.value)" value=192 class="slider" id="blue">
@@ -29,7 +32,7 @@
                     <div class="alert alert-danger collapse" class="collapse" id="alert" role="alert"></div>
                 </div>   
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="rainbowSwitch">
+                    <input class="form-check-input" type="checkbox" id="rainbowSwitch" onclick="RainbowOnOff()">
                     <label>Rainbow Mode</label>
                   </div>
                   

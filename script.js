@@ -103,3 +103,20 @@ function changeColor(red, blue, green)
         boxes[x].style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     }
 }
+function RainbowOnOff()
+{
+    let rainBowSwitch = document.getElementById("rainbowSwitch");
+    let subElements = document.getElementsByClassName("box");
+    for(let x = 0; x < subElements.length; x++)
+    {
+        if(rainBowSwitch.checked == true)
+        {
+            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`});
+        }
+        else
+        {
+            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = "black"});
+            console.log("off");
+        }
+    }
+}
