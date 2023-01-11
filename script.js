@@ -20,14 +20,28 @@ function newEtchSize(size)
         subElements[0].parentNode.removeChild(subElements[0]);
     }
     //add hover function
+    let rainBowSwitch = document.getElementById("rainbowSwitch");
+    let color;
     for(let x = 0; x < subElements.length; x++)
     {
-        subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = "black";})
+        if(rainBowSwitch.checked == true)
+        {
+            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`});
+        }
+        else
+        {
+            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = "black"});
+        }
         subElements[x].style.setProperty('width', 500/size + 'px');
         subElements[x].style.setProperty('height', 500/size + 'px');
     }
 }
 
+
+function randomNumber()
+{
+    return Math.floor(Math.random() * (255));
+}
 
 function changeSize(input)
 {
@@ -36,9 +50,7 @@ function changeSize(input)
         let alert = document.getElementById("alert");
         alert.innerHTML = "Invalid Entry. Must be between 1 and 100";
         $("#alert").hide();
-
         return;
-
     }
     document.getElementById("alert").innerHTML = "   ";
     document.getElementById("txtInput").value = input;
@@ -59,6 +71,18 @@ function reset()
     {
         subElements[x].style.backgroundColor = 'pink';
     }
+    let rainBowSwitch = document.getElementById("rainbowSwitch");
+    for(let x = 0; x < subElements.length; x++)
+    {
+        if(rainBowSwitch.checked == true)
+        {
+            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`});
+        }
+        else
+        {
+            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = "black"});
+        }
+    }
 }
 
 function changeRadius(value)
@@ -66,7 +90,7 @@ function changeRadius(value)
     let boxes = document.getElementsByClassName("box");
     for(let x = 0; x < boxes.length; x++)
     {
-        boxes[x].style.setProperty('border-radius', value + 'px');
+        boxes[x].style.borderRadius = value + 'px';
     }
 }
 
