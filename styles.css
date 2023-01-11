@@ -1,7 +1,6 @@
 body {
     min-height: 100vh;
     min-width: 100vh;
-    background-color: darkblue;
     display: flex;
     flex-direction: column;
 }
@@ -34,20 +33,22 @@ body {
 }
 .mainRight {
     display: flex;
-    justify-content: center;  
+    justify-content: center;
+    background-color: grey;  
 }
 .mainLeft {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: grey;
     
 }
 
 
 
 .slidecontainer {
-    background-color: blue;
+    background-color: pink;
     display: flex;
     padding: 50px;
     gap: 20px;
@@ -62,15 +63,19 @@ header {
     text-align: center;
     padding-top: 20px;
     padding-bottom:20px;
-    background-color: darkblue;
     font-size: 100px;
     color: whitesmoke;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
 
 }
 footer {
     display: flex;
-    flex-grow: .2;
+    flex-grow: .1;
     justify-content: center;
     align-items: center;
     color: whitesmoke;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
