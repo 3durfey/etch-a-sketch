@@ -17,7 +17,6 @@ function newEtchSize(size)
         subElements[0].parentNode.removeChild(subElements[0]);
     }
     //add hover function
-    console.log(subElements.length);
     for(let x = 0; x < subElements.length; x++)
     {
         subElements[x].addEventListener("mouseover", (event) => {
@@ -46,4 +45,12 @@ function changeSize()
     sliderValue.innerHTML = input;
     newEtchSize(input);
     document.getElementById("etch_container").style.gridTemplateColumns = `repeat(${input}, 1fr)`;
+}
+function reset()
+{    
+    let subElements = document.getElementsByClassName("box");
+    for(let x = 0; x < subElements.length; x++)
+    {
+        subElements[x].style.backgroundColor = 'pink';
+    }
 }
