@@ -42,6 +42,7 @@ slider.oninput = function ()
 function changeSize()
 {
     let input = document.getElementById("input").value;
+    document.getElementById("myRange").value = input;
     sliderValue.innerHTML = input;
     newEtchSize(input);
     document.getElementById("etch_container").style.gridTemplateColumns = `repeat(${input}, 1fr)`;
