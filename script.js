@@ -40,7 +40,6 @@ function changeSize(input)
         return;
 
     }
-    console.log("fail " + input.length);
     document.getElementById("alert").innerHTML = "   ";
     document.getElementById("txtInput").value = input;
     document.getElementById("myRange").value = input;
@@ -50,6 +49,12 @@ function changeSize(input)
 function reset()
 {    
     let subElements = document.getElementsByClassName("box");
+    let red = document.getElementById("red");
+    let blue = document.getElementById("blue");
+    let green = document.getElementById("green");
+    red.value = 255;
+    blue.value = 192;
+    green.value = 203;
     for(let x = 0; x < subElements.length; x++)
     {
         subElements[x].style.backgroundColor = 'pink';
@@ -59,10 +64,18 @@ function reset()
 function changeRadius(value)
 {
     let boxes = document.getElementsByClassName("box");
-    console.log(boxes.length);
-    console.log(value);
     for(let x = 0; x < boxes.length; x++)
     {
         boxes[x].style.setProperty('border-radius', value + 'px');
+    }
+}
+
+
+function changeColor(red, blue, green)
+{
+    let boxes = document.getElementsByClassName("box");
+    for(let x = 0; x < boxes.length; x++)
+    {
+        boxes[x].style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     }
 }

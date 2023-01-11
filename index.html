@@ -19,7 +19,9 @@
             <div class="slidecontainer">                
                 <input type="range" onchange="changeSize(this.value)" min="1" max="100" value=16 class="slider" id="myRange">
                 <input type="range" min="1" max="15" onchange="changeRadius(this.value)" value=10 class="slider" id="borderRadius">
-                <input type="range" min="1" max="10" onchange="changeColor(this.value)" value=10 class="slider" id="borderRadius">
+                <input type="range" min="0" max="255" onchange="changeColor(this.value, blue.value, green.value)" value=255 class="slider" id="red">
+                <input type="range" min="0" max="255" onchange="changeColor(red.value, blue.value, this.value)" value=203 class="slider" id="green">
+                <input type="range" min="0" max="255" onchange="changeColor(red.value, this.value, green.value)" value=192 class="slider" id="blue">
                 <div class="inputGroup">
                     <input type="text" id="txtInput" name="size" placeholder="Enter size">    
                     <button class="btn btn-dark" type="button" onclick="changeSize(txtInput.value);">Enter</button>
