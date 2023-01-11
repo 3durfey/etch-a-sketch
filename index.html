@@ -17,11 +17,11 @@
     <div class="main1">
         <div class ="left1">
             <div class="slidecontainer">
-                <div>Adjust size here!</div>
+                <div id="alert">Adjust size here!</div>
                 <input type="range" onchange="changeSize(this.value)" min="1" max="100" value=16 class="slider" id="myRange">
                 <div class="inputGroup">
                     <input type="text" id="txtInput" name="size" placeholder="Enter size">    
-                    <button class="button" type="button" onclick="changeSize(txtInput.value);">Enter</button>
+                    <button class="btn btn-dark" type="button" onclick="changeSize(txtInput.value);">Enter</button>
                 </div>   
                     <button class="button" type="button" onclick="reset();">RESET</button>      
               </div>
@@ -33,5 +33,9 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div>
+            <p>Created By Peter Durfey</p>
+    </footer>
 </body>
 </html>
