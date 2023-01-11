@@ -31,10 +31,14 @@ function newEtchSize(size)
 
 function changeSize(input)
 {
-    if(parseInt(input.length) === 0 || input > 100)
+    if(parseInt(input.length) === 0 || input > 100 || parseInt(input) === 0)
     {
-        document.getElementById("alert").innerHTML = "Invalid Entry. Must be between 1 and 100";
+        let alert = document.getElementById("alert");
+        alert.innerHTML = "Invalid Entry. Must be between 1 and 100";
+        $("#alert").hide();
+
         return;
+
     }
     console.log("fail " + input.length);
     document.getElementById("alert").innerHTML = "   ";
@@ -49,5 +53,16 @@ function reset()
     for(let x = 0; x < subElements.length; x++)
     {
         subElements[x].style.backgroundColor = 'pink';
+    }
+}
+
+function changeRadius(value)
+{
+    let boxes = document.getElementsByClassName("box");
+    console.log(boxes.length);
+    console.log(value);
+    for(let x = 0; x < boxes.length; x++)
+    {
+        boxes[x].style.setProperty('border-radius', value + 'px');
     }
 }

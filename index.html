@@ -13,27 +13,30 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-    <header>Etch-a-Sketch</header>
-    <div class="main1">
-        <div class ="left1">
-            <div class="slidecontainer">
-                <div id="alert">Adjust size here!</div>
+    <header><h1>Etch-a-Sketch</h1></header>
+    <div class="main">
+        <div class ="mainLeft">
+            <div class="slidecontainer">                
                 <input type="range" onchange="changeSize(this.value)" min="1" max="100" value=16 class="slider" id="myRange">
+                <input type="range" min="1" max="15" onchange="changeRadius(this.value)" value=10 class="slider" id="borderRadius">
                 <div class="inputGroup">
                     <input type="text" id="txtInput" name="size" placeholder="Enter size">    
                     <button class="btn btn-dark" type="button" onclick="changeSize(txtInput.value);">Enter</button>
+                    <button class="btn btn-dark" type="button" onclick="reset();">RESET</button>      
+                    <div class="alert alert-danger collapse" class="collapse" id="alert" role="alert">
+                      </div>
+
                 </div>   
-                    <button class="button" type="button" onclick="reset();">RESET</button>      
               </div>
         </div>
-        <div class="right1">
+        <div class="mainRight">
                 <div class="title"></div>
             <div class="Container">
                 <div id="etch_container"></div>
             </div>
         </div>
     </div>
-    <footer>
+    <footer class="bg-dark">
         <div>
             <p>Created By Peter Durfey</p>
     </footer>
