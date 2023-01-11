@@ -53,3 +53,6 @@ header {
     font-size: 100px;
 }
 
+.inputGroup {
+    display: flex;
+}
