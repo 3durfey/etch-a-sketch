@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
     <title>etch-a-sketch</title>
+    <script src="script.js" defer></script>
+
 </head>
 <body>
-    
+    <header>Etch-a-Sketch</header>
+
+    <div class="main1">
+        <div class ="left1">
+            <div class="slidecontainer">
+                <div>Adjust size here!</div>
+                <div id="sliderValue">sdfd</div>
+                <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
+              </div>
+        </div>
+        <div class="right1">
+                <div class="title"></div>
+            <div class="Container">
+                <div id="etch_container"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

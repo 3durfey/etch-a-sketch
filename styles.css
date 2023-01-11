@@ -1,0 +1,58 @@
+body {
+    min-height: 100vh;
+    min-width: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color: grey;
+
+}
+
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#etch_container {
+    margin-right: 300px;
+    display: grid;
+    height: 150mm;
+    width: 150mm;
+    grid-template-columns: repeat(16, 1fr);
+    background-color: red;
+}
+.box {
+    background-color: pink;
+    width:16/150mm;   
+    height:16/150mm;
+    border-style: solid;
+}
+
+
+.main1 {
+    display: flex;
+}
+.right1 {
+    display: flex;
+    background-color: black;  
+    justify-content: center;  
+}
+.left1 {
+    flex-grow: 1;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+header {
+    text-align: center;
+    padding-bottom: 100px;
+    background-color: black;
+    font-size: 100px;
+}
+
