@@ -16,16 +16,13 @@ body {
 #etch_container {
     margin-right: 300px;
     display: grid;
-    height: 150mm;
-    width: 150mm;
-    grid-template-columns: repeat(16, 1fr);
-    background-color: red;
+    height: 500px;
+    width: 500px;
+    grid-template-columns: repeat(16, auto);
+    background-color: pink;
 }
 .box {
     background-color: pink;
-    width:16/150mm;   
-    height:16/150mm;
-    border-style: solid;
 }
 
 
