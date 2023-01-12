@@ -2,6 +2,7 @@
 //add all divs
 let container = document.getElementById("etch_container");
 let htmlElements = "";
+let mouse = 0;
 newEtchSize(16);
 
 function newEtchSize(size)
@@ -42,12 +43,16 @@ function newEtchSize(size)
         const colorChangeEvent = event => event.target.style.backgroundColor = color;
         boxElement.addEventListener("mousedown", colorChangeEvent);
         boxElement.addEventListener("mouseover", event => {
-            if (event.buttons == 1) colorChangeEvent(event);
+            if (event.buttons == mouse) colorChangeEvent(event);
             });
     }
 }
 
-
+function mouseDown()
+{
+    let mouseStatus = document.getElementById("buttonDown");
+    mouse = mouseStatus.checked ? 1 : 0;
+}
 function randomNumber()
 {
     return Math.floor(Math.random() * (255));
@@ -123,7 +128,7 @@ function RainbowOnOff()
         const colorChangeEvent = event => event.target.style.backgroundColor = color;
         boxElement.addEventListener("mousedown", colorChangeEvent);
         boxElement.addEventListener("mouseover", event => {
-            if (event.buttons == 1) colorChangeEvent(event);
+            if (event.buttons == mouse) colorChangeEvent(event);
             });
     }
 }
