@@ -10,7 +10,7 @@
     <script src="script.js" defer></script>
 
 </head>
-<body>
+<body onload="newEtchASketch()">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <header class="bg-dark"><h1>Etch-a-Sketch</h1></header>
@@ -18,31 +18,34 @@
         <div class ="mainLeft">
             <div class="slidecontainer">
                 <label >Container Size</label>                
-                <input type="range" onchange="changeContainerSize(this.value)" min="500" max="1000" value=500 class="slider" id="containerSize">
+                <input type="range" onchange="newEtchASketch()" min="500" max="1000" value=500 class="slider" id="containerNumberOfBoxes">
+
                 <label >Number of Boxes</label>                
-                <input type="range" onchange="changeSize(this.value)" min="1" max="100" value=16 class="slider" id="myRange">
+                <input type="range" onchange="newEtchASketch()" min="1" max="100" value=16 class="slider" id="numberOfBoxes">
+
                 <label>Grid Radius</label>                
-                <input type="range" min="0" max="15" onchange="changeRadius(this.value)" value=10 class="slider" id="borderRadius">
+                <input type="range" min="0" max="15" onchange="newEtchASketch()" value=10 class="slider" id="radiusBorder">
+                
                 <label class="bold">Grid Color</label>                
                 <input type="range" min="0" max="255" onchange="changeColor(this.value, blue.value, green.value)" value=255 class="slider" id="red">
                 <input type="range" min="0" max="255" onchange="changeColor(red.value, blue.value, this.value)" value=203 class="slider" id="green">
                 <input type="range" min="0" max="255" onchange="changeColor(red.value, this.value, green.value)" value=192 class="slider" id="blue">
+
                 <div class="inputGroup">
                     <input type="text" id="txtInput" name="size" placeholder="Enter size">    
-                    <button class="btn btn-dark" type="button" onclick="changeSize(txtInput.value);">Enter</button>
+                    <button class="btn btn-dark" type="button" onclick="newEtchASketch()">Enter</button>
                     <button class="btn btn-dark" type="button" onclick="reset();">RESET</button>      
-                    <div class="alert alert-danger collapse" class="collapse" id="alert" role="alert"></div>
                 </div>   
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="rainbowSwitch" onclick="RainbowOnOff()">
+                    <input class="form-check-input" type="checkbox" id="rainbowSwitch" onclick="newEtchASketch()">
                     <label>Rainbow Mode</label>
                   </div>
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="buttonDown" onclick="mouseDown()">
+                    <input class="form-check-input" type="checkbox" id="buttonDown" onclick="newEtchASketch()">
                     <label>Mouse Down Mode</label>
                   </div>
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="gridLines" onclick="toggleGridLines()">
+                    <input class="form-check-input" type="checkbox" id="gridLines" onclick="newEtchASketch()">
                     <label>Gridlines ON/OFF</label>
                   </div>
                   
