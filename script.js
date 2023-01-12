@@ -1,7 +1,9 @@
+
 //add all divs
 let container = document.getElementById("etch_container");
 let htmlElements = "";
 newEtchSize(16);
+
 function newEtchSize(size)
 {
     //reset colors
@@ -21,19 +23,27 @@ function newEtchSize(size)
     }
     //add hover function
     let rainBowSwitch = document.getElementById("rainbowSwitch");
-    let color;
     for(let x = 0; x < subElements.length; x++)
     {
         if(rainBowSwitch.checked == true)
         {
-            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`});
+            changeColor(subElements[x], `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`);
         }
         else
         {
-            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = "black"});
+            changeColor(subElements[x], "black");
         }
         subElements[x].style.setProperty('width', 500/size + 'px');
         subElements[x].style.setProperty('height', 500/size + 'px');
+    }
+
+    function changeColor(boxElement, color)
+    {
+        const colorChangeEvent = event => event.target.style.backgroundColor = color;
+        boxElement.addEventListener("mousedown", colorChangeEvent);
+        boxElement.addEventListener("mouseover", event => {
+            if (event.buttons == 1) colorChangeEvent(event);
+            });
     }
 }
 
@@ -71,18 +81,7 @@ function reset()
     {
         subElements[x].style.backgroundColor = 'pink';
     }
-    let rainBowSwitch = document.getElementById("rainbowSwitch");
-    for(let x = 0; x < subElements.length; x++)
-    {
-        if(rainBowSwitch.checked == true)
-        {
-            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`});
-        }
-        else
-        {
-            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = "black"});
-        }
-    }
+    RainbowOnOff()
 }
 
 function changeRadius(value)
@@ -111,12 +110,20 @@ function RainbowOnOff()
     {
         if(rainBowSwitch.checked == true)
         {
-            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`});
+            changeColor(subElements[x], `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`);
         }
         else
         {
-            subElements[x].addEventListener("mouseover", (event) => {event.target.style.backgroundColor = "black"});
-            console.log("off");
+            changeColor(subElements[x], "black");
         }
+    }
+
+    function changeColor(boxElement, color)
+    {
+        const colorChangeEvent = event => event.target.style.backgroundColor = color;
+        boxElement.addEventListener("mousedown", colorChangeEvent);
+        boxElement.addEventListener("mouseover", event => {
+            if (event.buttons == 1) colorChangeEvent(event);
+            });
     }
 }

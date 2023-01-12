@@ -8,10 +8,11 @@ body {
 .Container {
     display: flex;
     justify-content: center;
+    background-color: grey;
     align-items: center;
 }
 #etch_container {
-    margin-right: 300px;
+
     display: grid;
     height: 500px;
     width: 500px;
@@ -30,6 +31,7 @@ body {
     flex-grow: 1;
 }
 .mainRight {
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     background-color: grey;  
