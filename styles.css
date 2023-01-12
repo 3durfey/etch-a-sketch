@@ -21,7 +21,7 @@ body {
 }
 .box {
     background-color: pink;
-    outline-style: solid;
+    outline-style: none;
     border-radius: 10px;
     box-shadow: 5px 5px;
 }

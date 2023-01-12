@@ -17,11 +17,13 @@
     <div class="main">
         <div class ="mainLeft">
             <div class="slidecontainer">
-                <label >Grid Size Adjustor</label>                
+                <label >Container Size</label>                
+                <input type="range" onchange="changeContainerSize(this.value)" min="500" max="1000" value=500 class="slider" id="containerSize">
+                <label >Number of Boxes</label>                
                 <input type="range" onchange="changeSize(this.value)" min="1" max="100" value=16 class="slider" id="myRange">
-                <label>Grid Radius Adjustor</label>                
-                <input type="range" min="1" max="15" onchange="changeRadius(this.value)" value=10 class="slider" id="borderRadius">
-                <label class="bold">Grid Color Adjustments</label>                
+                <label>Grid Radius</label>                
+                <input type="range" min="0" max="15" onchange="changeRadius(this.value)" value=10 class="slider" id="borderRadius">
+                <label class="bold">Grid Color</label>                
                 <input type="range" min="0" max="255" onchange="changeColor(this.value, blue.value, green.value)" value=255 class="slider" id="red">
                 <input type="range" min="0" max="255" onchange="changeColor(red.value, blue.value, this.value)" value=203 class="slider" id="green">
                 <input type="range" min="0" max="255" onchange="changeColor(red.value, this.value, green.value)" value=192 class="slider" id="blue">
@@ -38,6 +40,10 @@
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="buttonDown" onclick="mouseDown()">
                     <label>Mouse Down Mode</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="gridLines" onclick="toggleGridLines()">
+                    <label>Gridlines ON/OFF</label>
                   </div>
                   
             </div>

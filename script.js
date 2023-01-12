@@ -3,6 +3,7 @@
 let container = document.getElementById("etch_container");
 let htmlElements = "";
 let mouse = 0;
+let containerWidthAndHeight = 500;
 newEtchSize(16);
 
 function newEtchSize(size)
@@ -34,14 +35,15 @@ function newEtchSize(size)
         {
             changeColor(subElements[x], "black");
         }
-        subElements[x].style.setProperty('width', 500/size + 'px');
-        subElements[x].style.setProperty('height', 500/size + 'px');
+        subElements[x].style.setProperty('width', containerWidthAndHeight/size + 'px');
+        subElements[x].style.setProperty('height', containerWidthAndHeight/size + 'px');
     }
 
     function changeColor(boxElement, color)
     {
         const colorChangeEvent = event => event.target.style.backgroundColor = color;
         boxElement.addEventListener("mousedown", colorChangeEvent);
+        
         boxElement.addEventListener("mouseover", event => {
             if (event.buttons == mouse) colorChangeEvent(event);
             });
@@ -127,8 +129,36 @@ function RainbowOnOff()
     {
         const colorChangeEvent = event => event.target.style.backgroundColor = color;
         boxElement.addEventListener("mousedown", colorChangeEvent);
+
         boxElement.addEventListener("mouseover", event => {
             if (event.buttons == mouse) colorChangeEvent(event);
             });
     }
+}
+
+function changeContainerSize(size)
+{
+    containerWidthAndHeight = size;
+    document.getElementById("etch_container").style.height = size + "px";
+    document.getElementById("etch_container").style.width = size + "px";
+    newEtchSize(document.getElementById("myRange").value);
+
+}
+
+function toggleGridLines()
+{
+    let gridLines = document.getElementById("gridLines");
+    let subElements = document.getElementsByClassName("box");
+    for(let x = 0; x < subElements.length; x++)
+    {
+        if(gridLines.checked == true)
+        {
+            subElements[x].style.outlineStyle = 'solid';
+        }
+        else
+        {
+            subElements[x].style.outlineStyle = 'none';
+        }
+    }
+    newEtchSize(document.getElementById("myRange").value);
 }
